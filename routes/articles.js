@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var markdown = require('markdown').markdown;
 var middleware = require('../middleware/index');
-
-
 //打开添加文章的页面
 router.get('/add',middleware.checkLogin, function(req, res, next) {
     console.log("打开添加文章页面");
@@ -11,7 +9,6 @@ router.get('/add',middleware.checkLogin, function(req, res, next) {
     res.render("articles/addArticle",{title:"发表文章",keyword:keyword});
 
 });
-
 router.post("/add",middleware.checkLogin,function (req,res,next) {
    console.log("提交新博客的信息");
     var article = req.body;
@@ -24,7 +21,7 @@ router.post("/add",middleware.checkLogin,function (req,res,next) {
                 return res.redirect("/articles/add");
             }
             //发表成功后转到首页
-            return res.redirect("/")
+            return res.redirect("/");
 
         })
 
@@ -48,7 +45,6 @@ router.post("/edit/:_id",middleware.checkLogin,function (req,res,next) {
         return res.redirect("/articles/detail/"+req.params._id);
     })
 });
-
 router.get("/detail/:_id",function (req,res,next) {
     //路径参数中如果参数是id,那么名字必须是_id
        var articleId= req.params._id;
@@ -58,7 +54,6 @@ router.get("/detail/:_id",function (req,res,next) {
        })
     
 })
-
 router.get("/edit/:_id",function (req,res,next) {
     //路径参数中如果参数是id,那么名字必须是_id
     var articleId= req.params._id;
@@ -152,10 +147,5 @@ router.all('/list/:pageNum/:pageSize',function (req,res,next) {
         
 
 })
-
-
-
-
-
 
 module.exports = router;

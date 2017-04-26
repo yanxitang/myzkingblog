@@ -8,8 +8,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-
-<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<nav class="navbar navbar-default col-sm-12" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menus">
             <span class="sr-only">我的博客</span>
@@ -23,8 +23,8 @@
     <div class="collapse navbar-collapse" id="menus">
         <ul class="nav navbar-nav">
             <% if(!user){%>
-            <li class="active"><a href="/users/reg">注册</a></li>
-            <li class=""><a href="/users/login">登陆</a></li>
+            <li class="active"><a href="/users/reg" class="text-success">注册</a></li>
+            <li class=""><a href="/users/login" >登陆</a></li>
             <%}else {%>
             <li class=""><a href="/articles/add">发表文章</a></li>
             <li class="">

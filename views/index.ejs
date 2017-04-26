@@ -1,7 +1,6 @@
-
 <% include include/header.ejs%>
 
-    <h1>最新博客</h1>
+    <h2>最新博客</h2>
     <div class ="container">
          <ul class="media-list">
              <%
@@ -16,7 +15,6 @@
                       <h4 class="media-heading"><a href="/articles/detail/<%=a._id%>"><%=a.title%></a></h4>
                       <p class="media-left"><%-a.content%></p>
                  </div>
-
                   <div class="media-bottom">
                       作者:<%=a.user.username%>
                       发表时间:<%=a.createTime.toLocaleString()%>

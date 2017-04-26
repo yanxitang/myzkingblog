@@ -2,7 +2,14 @@
   "name": "zkingblog",
   "version": "0.0.0",
   "private": true,
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
   "scripts": {
+
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -19,5 +26,7 @@
     "mongoose": "^4.8.6",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
+
   }
+
 }
